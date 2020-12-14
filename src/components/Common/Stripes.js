@@ -1,6 +1,6 @@
 import React from "react"
 
-const Stripes = ({ position, color, opacity }) => {
+const Stripes = ({ position, color, opacity, uniform }) => {
   return (
     <div
       className={`w-full h-full bg-transparent flex-row ${
@@ -18,7 +18,9 @@ const Stripes = ({ position, color, opacity }) => {
         }}
       ></div>
       <div
-        className={`bg-${color} absolute opacity-${opacity * 1 + 10}`}
+        className={`bg-${color} absolute opacity-${
+          uniform ? opacity : opacity * 1 + 10
+        }`}
         style={{
           height: "180%",
           width: "6%",
@@ -28,7 +30,9 @@ const Stripes = ({ position, color, opacity }) => {
         }}
       ></div>
       <div
-        className={`bg-${color} absolute opacity-${opacity * 1 + 20}`}
+        className={`bg-${color} absolute opacity-${
+          uniform ? opacity : opacity * 1 + 20
+        }`}
         style={{
           height: "180%",
           width: "50%",

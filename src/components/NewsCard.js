@@ -13,9 +13,9 @@ const NewsCard = ({ day, date, month, year, title, image, index }) => {
 
   return (
     <article
-      className={`relative border border-gray-200 ${width} ${
+      className={`relative ${width} ${
         (index + 1) % 6 === 0 ? "mr-auto" : null
-      } text-${fontSize} overflow-hidden`}
+      } text-${fontSize} overflow-hidden px-1 py-2 shadow-lg`}
     >
       <div className="relative w-full pb-50% h-0">
         <img
