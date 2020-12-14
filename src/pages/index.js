@@ -1,17 +1,79 @@
 import React from "react"
+import { SiInstagram, SiFacebook, SiYoutube } from "react-icons/si"
 import { Link } from "gatsby"
 
-import Layout from "../components/Layout"
 import SEO from "../components/Seo"
+import Stripes from "../components/Common/Stripes"
 
 const Home = () => (
-  <Layout>
+  <div className="w-screen h-screen relative overflow-hidden flex-initial">
     <SEO title="Home" />
-    <h1 className="font-mont font-thin">Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-  </Layout>
+    <iframe
+      src="https://www.youtube.com/embed/N2twYZOc4Q0?controls=0&autoplay=1&mute=1&loop=1&playlist=N2twYZOc4Q0"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+      autoplay="1"
+      mute="1"
+      className="absolute -z-20"
+      style={{
+        width: "115%",
+        height: "115%",
+        left: "-7.5%",
+        top: "-7.5%",
+        filter: "grayscale(100%)",
+      }}
+    ></iframe>
+    <div className="h-full w-full absolute bg-blue-main opacity-40"></div>
+    <Stripes position="absolute" opacity="30" color="blue-main" />
+    <div
+      className="absolute w-1/3 h-56 top-20 bg-blue-main opacity-60"
+      style={{ transform: "skew(-20deg)", right: "-3%" }}
+    ></div>
+    <div className="absolute top-20 right-6 text-white ">
+      <h1 className=" text-8xl font-bold pt-4 px-20 ">
+        JPR <span className="font-light">#</span>118
+      </h1>
+      <div className="flex text-7xl w-full justify-around items-center pl-48 pr-20">
+        <a
+          href="https://www.facebook.com/JPR118"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <SiFacebook />
+        </a>
+        <a
+          href="https://www.instagram.com/jp.118/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <SiInstagram />
+        </a>
+        <a
+          className="text-8xl"
+          href="https://www.youtube.com/channel/UCMJCzcXV4yvFeRZ4E6P25HQ"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <SiYoutube />
+        </a>
+      </div>
+    </div>
+    <div className="absolute bottom-1/3 right-64 p-4 flex flex-row">
+      <div className="h-64 w-3 mx-8 bg-white transform skew-y-25"></div>
+      <ul className="text-4xl font-light text-white">
+        <li className="p-3">ABOUT</li>
+        <li className="p-3">NEWS</li>
+        <li className="p-3">TRACKS</li>
+        <li className="p-3">GALLERY</li>
+      </ul>
+    </div>
+    <div className="absolute bottom-14 right-20 text-white">
+      <h1>James Plummer</h1>
+      <h1>MRO600 // BEMSEE</h1>
+      <h3>Onboard Brands Hatch - Indy Circuit </h3>
+    </div>
+  </div>
 )
 
 export default Home
