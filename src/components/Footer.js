@@ -56,7 +56,7 @@ const Footer = () => {
             <Link to="/">TRACKS</Link>
           </li>
           <li className="p-2">
-            <Link to="/">GALLERY</Link>
+            <Link to="/gallery/">GALLERY</Link>
           </li>
         </ul>
         <div className="h-54 w-2 mx-8 bg-white transform skew-y-25"></div>

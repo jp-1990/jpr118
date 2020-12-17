@@ -73,7 +73,7 @@ const Home = () => (
           <Link to="/">TRACKS</Link>
         </li>
         <li className="p-3">
-          <Link to="/">GALLERY</Link>
+          <Link to="/gallery/">GALLERY</Link>
         </li>
       </ul>
     </div>
