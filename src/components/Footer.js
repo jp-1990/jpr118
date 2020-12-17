@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import { SiFacebook, SiInstagram, SiYoutube } from "react-icons/si"
 
 import Stripes from "../components/Common/Stripes"
@@ -45,10 +46,18 @@ const Footer = () => {
       </div>
       <div className="absolute top-5 left-15% p-4 flex flex-row">
         <ul className="text-2xl font-light text-white">
-          <li className="p-2">ABOUT</li>
-          <li className="p-2">NEWS</li>
-          <li className="p-2">TRACKS</li>
-          <li className="p-2">GALLERY</li>
+          <li className="p-2">
+            <Link to="/">ABOUT</Link>
+          </li>
+          <li className="p-2">
+            <Link to="/news/">NEWS</Link>
+          </li>
+          <li className="p-2">
+            <Link to="/">TRACKS</Link>
+          </li>
+          <li className="p-2">
+            <Link to="/">GALLERY</Link>
+          </li>
         </ul>
         <div className="h-54 w-2 mx-8 bg-white transform skew-y-25"></div>
       </div>

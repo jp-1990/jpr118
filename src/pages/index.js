@@ -9,6 +9,7 @@ const Home = () => (
   <div className="w-screen h-screen relative overflow-hidden flex-initial">
     <SEO title="Home" />
     <iframe
+      title="onboard video"
       src="https://www.youtube.com/embed/N2twYZOc4Q0?controls=0&autoplay=1&mute=1&loop=1&playlist=N2twYZOc4Q0"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -62,10 +63,18 @@ const Home = () => (
     <div className="absolute bottom-1/3 right-64 p-4 flex flex-row">
       <div className="h-64 w-3 mx-8 bg-white transform skew-y-25"></div>
       <ul className="text-4xl font-light text-white">
-        <li className="p-3">ABOUT</li>
-        <li className="p-3">NEWS</li>
-        <li className="p-3">TRACKS</li>
-        <li className="p-3">GALLERY</li>
+        <li className="p-3">
+          <Link to="/">ABOUT</Link>
+        </li>
+        <li className="p-3">
+          <Link to="/news/">NEWS</Link>
+        </li>
+        <li className="p-3">
+          <Link to="/">TRACKS</Link>
+        </li>
+        <li className="p-3">
+          <Link to="/">GALLERY</Link>
+        </li>
       </ul>
     </div>
     <div className="absolute bottom-14 right-20 text-white">

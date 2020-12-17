@@ -1,4 +1,6 @@
 import React from "react"
+import { Link } from "gatsby"
+import slugify from "slugify"
 
 const NewsCard = ({ day, date, month, year, title, image, index }) => {
   let width
@@ -13,33 +15,32 @@ const NewsCard = ({ day, date, month, year, title, image, index }) => {
 
   return (
     <article
-      className={`relative ${width} ${
+      className={`transform relative ${width} ${
         (index + 1) % 6 === 0 ? "mr-auto" : null
-      } text-${fontSize} overflow-hidden px-1 py-2 shadow-lg`}
+      } text-${fontSize} overflow-hidden px-1 py-2 shadow-lg focus:outline-none hover:scale-102 transition duration-500`}
     >
-      <div className="relative w-full pb-50% h-0">
-        <img
-          src="https://scontent-lhr8-1.xx.fbcdn.net/v/t31.0-8/13346323_10154231187381563_5093828550250292481_o.jpg?_nc_cat=109&ccb=2&_nc_sid=730e14&_nc_ohc=LU5_zuWol3oAX_cw83c&_nc_ht=scontent-lhr8-1.xx&oh=868fb7b0cc4f8ec28bfcfe1542fa84f0&oe=5FFE229F"
-          alt="test"
-        ></img>
-      </div>
-      <div className="absolute w-full z-10 top-0 left-0">
-        <div className="mt-20em">
-          <div className="bg-gray-200 text-gray-700 w-1/6 p-5em flex flex-col items-center">
-            <h3 className="text-20em">{day}</h3>
-            <h3 className="text-20em">
-              <span className="font-bold">{date} </span>
-              {month}
-            </h3>
+      <Link to={`/${slugify(title)}/`}>
+        <div className="relative w-full pb-50% h-0">
+          <img src={image} alt="test"></img>
+        </div>
+        <div className="absolute w-full z-10 top-0 left-0">
+          <div className="mt-20em">
+            <div className="bg-gray-200 text-gray-700 w-1/6 p-5em flex flex-col items-center">
+              <h3 className="text-20em capitalize">{day}</h3>
+              <h3 className="text-20em capitalize">
+                <span className="font-bold">{date} </span>
+                {month}
+              </h3>
+            </div>
+            <div className="bg-blue-500 w-1/6 p-5em flex justify-center">
+              <h3 className="text-20em text-white">{year}</h3>
+            </div>
           </div>
-          <div className="bg-blue-500 w-1/6 p-5em flex justify-center">
-            <h3 className="text-20em text-white">{year}</h3>
+          <div className="flex justify-center p-20em mx-30em mt-20% bg-gray-900 text-white font-extralight opacity-70">
+            <h1 className="text-30em">{title}</h1>
           </div>
         </div>
-        <div className="flex justify-center p-20em mx-30em mt-20% bg-gray-900 text-white font-extralight opacity-70">
-          <h1 className="text-30em">{title}</h1>
-        </div>
-      </div>
+      </Link>
     </article>
   )
 }

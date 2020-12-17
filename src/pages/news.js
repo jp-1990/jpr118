@@ -1,26 +1,54 @@
 import React, { useState } from "react"
+import { useStaticQuery, graphql } from "gatsby"
 
 import Stripes from "../components/Common/Stripes"
-import NewsCard from "../components/Common/NewsCard"
+import NewsCard from "../components/NewsCard"
 import Button from "../components/Common/Button"
+import Footer from "../components/Footer"
+
+import { days, months } from "../helpers/dateFunctions"
 
 const News = () => {
   const [page, setPage] = useState(0)
 
+  const data = useStaticQuery(graphql`
+    query MyQuery {
+      allContentfulArticle {
+        edges {
+          node {
+            date
+            title
+            image
+          }
+        }
+      }
+    }
+  `)
+
+  // sort atricles by date, newest first
+  const articles = data.allContentfulArticle.edges
+  articles.sort((a, b) => {
+    if (a.node.date > b.node.date) return -1
+    if (a.node.date < b.node.date) return 1
+    return 0
+  })
+  // add article data into newscards to display
   const cards = []
-  for (let i = 0; i < 12; i++) {
+  articles.forEach((e, i) => {
+    const date = new Date(e.node.date)
     cards.push(
       <NewsCard
         key={i}
-        day="Mon"
-        date="24"
-        month="Oct"
-        year="2020"
-        title="This is the headline for the article"
+        day={days[date.getDay()].substring(0, 3)}
+        date={date.getDate()}
+        month={months[date.getMonth()].substring(0, 3)}
+        year={date.getFullYear()}
+        title={e.node.title}
+        image={e.node.image}
         index={i}
       />
     )
-  }
+  })
 
   const pageCount = Math.ceil(cards.length / 6)
   const pages = []
@@ -61,18 +89,21 @@ const News = () => {
       <div className="w-full  relative overflow-hidden flex flex-col justify-center items-center">
         <Stripes position="absolute" color="gray-200" opacity="30" />
         <h1 className="text-gray-500 font-extrabold p-10">NEWS</h1>
-        <section className="w-4/5 h-full border border-gray-100 mx-36">
+        <section className="w-4/5 h-full mx-36">
           {pages[page]}
 
           <div className="mt-50em mb-30em">
             {page > 0 ? (
               <>
-                <Button text="Previous" action={prevPageHandler} />
+                <Button text="Prev" action={prevPageHandler} />
                 <span className="m-5em"></span>
               </>
             ) : null}
             {page === pageCount - 1 ? null : (
-              <Button text="Next" action={nextPageHandler} />
+              <>
+                <Button text="Next" action={nextPageHandler} />
+                <span className="m-5em"></span>
+              </>
             )}
             <span className="mx-10em">{`Page ${
               page + 1
@@ -80,7 +111,7 @@ const News = () => {
           </div>
         </section>
       </div>
-      <div>footer</div>
+      <Footer />
     </>
   )
 }
