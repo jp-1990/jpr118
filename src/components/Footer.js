@@ -6,8 +6,8 @@ import Stripes from "../components/Common/Stripes"
 
 const Footer = () => {
   return (
-    <div className="bg-blue-600 h-80 w-full relative">
-      <div className=" h-80 z-10 relative overflow-hidden ml-30%">
+    <div className="bg-blue-600 h-72 w-full relative">
+      <div className=" h-72 z-10 relative overflow-hidden ml-30%">
         <Stripes
           position="absolute"
           color="blue-200"
@@ -15,9 +15,11 @@ const Footer = () => {
           uniform={true}
         />
       </div>
-      <div className="absolute top-12 right-6 text-white z-20">
+      <div className="absolute top-8 right-6 text-white z-20">
         <h1 className=" text-7xl font-bold pt-4 px-20 ">
-          JPR <span className="font-light">#</span>118
+          <Link to="/">
+            JPR <span className="font-light">#</span>118
+          </Link>
         </h1>
         <div className="flex text-6xl w-full justify-around items-center pl-36 pr-20">
           <a
@@ -44,16 +46,13 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      <div className="absolute top-5 left-15% p-4 flex flex-row">
+      <div className="absolute top-10% left-15% p-4 flex flex-row">
         <ul className="text-2xl font-light text-white">
           <li className="p-2">
-            <Link to="/">ABOUT</Link>
+            <Link to="/about/">ABOUT</Link>
           </li>
           <li className="p-2">
             <Link to="/news/">NEWS</Link>
-          </li>
-          <li className="p-2">
-            <Link to="/">TRACKS</Link>
           </li>
           <li className="p-2">
             <Link to="/gallery/">GALLERY</Link>
