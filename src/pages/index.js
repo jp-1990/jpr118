@@ -28,14 +28,14 @@ const Home = () => (
     <div className="h-full w-full absolute bg-blue-main opacity-40"></div>
     <Stripes position="absolute" opacity="30" color="blue-main" />
     <div
-      className="absolute w-1/3 h-56 top-20 bg-blue-main opacity-60"
-      style={{ transform: "skew(-20deg)", right: "-3%" }}
+      className="absolute w-1/3 h-56 top-20 bg-blue-main"
+      style={{ transform: "skew(-20deg)", right: "-5%" }}
     ></div>
-    <div className="absolute top-20 right-6 text-white ">
-      <h1 className=" text-8xl font-bold pt-4 px-20 ">
+    <div className="absolute top-20 right-0 text-white ">
+      <h1 className=" text-8xl font-bold pt-4 px-14 ">
         JPR <span className="font-light">#</span>118
       </h1>
-      <div className="flex text-7xl w-full justify-around items-center pl-48 pr-20">
+      <div className="flex text-7xl w-full justify-around items-center pl-48 pr-14">
         <a
           href="https://www.facebook.com/JPR118"
           target="_blank"
@@ -60,17 +60,14 @@ const Home = () => (
         </a>
       </div>
     </div>
-    <div className="absolute bottom-1/3 right-64 p-4 flex flex-row">
-      <div className="h-64 w-3 mx-8 bg-white transform skew-y-25"></div>
+    <div className="absolute bottom-1/3 right-64 p-4 mb-4 flex flex-row">
+      <div className="h-52 w-3 mx-8 bg-white transform skew-y-25"></div>
       <ul className="text-4xl font-light text-white">
         <li className="p-3">
-          <Link to="/">ABOUT</Link>
+          <Link to="/about/">ABOUT</Link>
         </li>
         <li className="p-3">
           <Link to="/news/">NEWS</Link>
-        </li>
-        <li className="p-3">
-          <Link to="/">TRACKS</Link>
         </li>
         <li className="p-3">
           <Link to="/gallery/">GALLERY</Link>
