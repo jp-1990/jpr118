@@ -15,7 +15,7 @@ const Footer = () => {
           uniform={true}
         />
       </div>
-      <div className="absolute top-8 right-6 text-white z-20">
+      <div className="hidden absolute top-8 right-6 text-white z-20 md:block">
         <h1 className=" text-7xl font-bold pt-4 px-20 ">
           <Link to="/">
             JPR <span className="font-light">#</span>118
