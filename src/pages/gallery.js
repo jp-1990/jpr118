@@ -42,8 +42,10 @@ const Gallery = () => {
     <>
       <div className="w-full relative overflow-hidden flex flex-col justify-center items-center">
         <Stripes position="absolute" color="gray-200" opacity="30" />
-        <h1 className="text-gray-500 font-extrabold p-10">Gallery</h1>
-        <section className="w-full px-15% mb-20 grid grid-cols-3">
+        <h1 className="text-gray-500 font-extrabold p-10 3xl:text-6xl">
+          Gallery
+        </h1>
+        <section className="w-full px-15% mb-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
           {galleryIndex}
         </section>
         {active !== false ? (
