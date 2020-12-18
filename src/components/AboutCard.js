@@ -30,9 +30,9 @@ const AboutCard = () => {
 
   return (
     <article>
-      <div className=" relative h-48 w-90% flex justify-center">
+      <div className=" relative h-40 w-90% flex justify-center">
         <img
-          className="absolute rounded-full ml-10% top-0 p-6 border border-blue-800 bg-blue-600"
+          className="absolute rounded-full ml-10% top-0 p-6 border border-blue-800 bg-blue-600 w-65% max-w-290 xl:max-w-none xl:w-90%"
           src={about.image.fluid.src}
         ></img>
       </div>

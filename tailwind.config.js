@@ -49,6 +49,12 @@ module.exports = {
       scale: {
         102: "1.02",
       },
+      screens: {
+        "3xl": "2560px",
+      },
+      maxWidth: {
+        290: "290px",
+      },
     },
   },
   variants: {
