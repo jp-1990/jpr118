@@ -113,20 +113,20 @@ const newsArticle = ({ data }) => {
           uniform={true}
         />
         <div className="flex justify-center flex-col-reverse 2xl:flex-row 2xl:pt-20 2xl:pb-16 2xl:mb-4">
-          <div className="flex flex-col w-full px-2 2xl:px-8 2xl:justify-start 2xl:mr-8 2xl:w-35%">
+          <div className="flex flex-col w-full px-2 2xl:px-8 2xl:justify-start 2xl:mr-8 2xl:w-35% 2xl:mt-12">
             <div className="flex my-2 md:ml-16 md:mt-3 md:mb-3 lg:ml-32 xl:ml-48 2xl:my-0 2xl:ml-0">
-              <h3 className="bg-gray-200 text-gray-700 capitalize text-sm py-1 px-3 md:text-base 2xl:mb-10 2xl:px-3 2xl:text-xl">
+              <h3 className="bg-gray-200 text-gray-700 capitalize text-sm py-1 px-3 md:text-base 2xl:mb-10 2xl:px-3 2xl:text-2xl 3xl:text-4xl">
                 {articleDate.day.substring(0, 3)} {articleDate.date}{" "}
                 {articleDate.month.substring(0, 3)}
               </h3>
 
-              <h3 className="bg-blue-500 py-1 px-3 text-white text-sm md:text-base 2xl:text-xl 2xl:mb-10">
+              <h3 className="bg-blue-500 py-1 px-3 text-white text-sm md:text-base 2xl:text-2xl 2xl:mb-10 3xl:text-4xl">
                 {" "}
                 {articleDate.year}
               </h3>
             </div>
 
-            <h1 className="text-3xl font-bold text-gray-600 m-auto pb-6 pt-2 px-1 sm:text-4xl sm:px-16 lg:text-5xl lg:px-32 xl:px-48 2xl:px-0 pr-10 2xl:m-0 2xl:text-7xl">
+            <h1 className="text-3xl font-bold text-gray-600 m-auto pb-6 pt-2 px-1 sm:text-4xl sm:px-16 lg:text-5xl lg:px-32 xl:px-48 2xl:px-0 pr-10 2xl:m-0 2xl:text-7xl 3xl:text-8xl">
               {data.contentfulArticle.title}
             </h1>
           </div>
@@ -140,11 +140,11 @@ const newsArticle = ({ data }) => {
             ></img>
           </div>
         </div>
-        <div className="w-70% m-auto mb-10 text-sm flex flex-col justify-around md:text-base xl:flex-row 2xl:mb-36 2xl:text-lg">
+        <div className="w-70% m-auto mb-10 text-sm flex flex-col justify-around md:text-base xl:flex-row 2xl:mb-36 2xl:text-lg 3xl:text-3xl">
           <div className="xl:px-4 2xl:w-45%">{col1Output}</div>
           <div className="xl:px-4 2xl:w-45%">{col2Output}</div>
         </div>
-        <div className="ml-4 my-6 flex flex-col items-center md:ml-16 md:flex-row lg:ml-32 xl:ml-48 2xl:ml-56 2xl:my-10">
+        <div className="ml-4 my-6 flex flex-col items-center md:ml-16 md:flex-row lg:ml-32 xl:ml-48 2xl:ml-56 2xl:my-10 3xl:text-2xl">
           {articleIndex > 0 ? (
             <div className="px-2 py-1">
               <Link to={`/${slugify(articles[articleIndex - 1].node.title)}/`}>

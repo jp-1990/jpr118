@@ -80,10 +80,10 @@ const About = () => {
             <h2 className="bg-blue-700 w-64 px-2 mb-6 text-gray-100">
               {about.title2.toUpperCase()}
             </h2>
-            <p className="mb-4 3xl:text-xl">
+            <p className="mb-4 3xl:text-2xl">
               {about.content.content.split("!!p!!")[0]}
             </p>
-            <p className="3xl:text-xl">
+            <p className="3xl:text-2xl">
               {about.content.content.split("!!p!!")[1]}
             </p>
           </article>
