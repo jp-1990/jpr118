@@ -55,20 +55,16 @@ const News = () => {
   let counter = 0
   for (let i = 0; i < pageCount; i++) {
     pages.push(
-      <>
-        <div className="w-full flex">
+      <div className="grid grid-cols-1 gap-2 md:gap-2 md:grid-cols-3 md:grid-rows-3">
+        <div className="md:row-span-2 md:col-span-2">
           {cards[counter] ? cards[counter] : null}
-          <div className="flex flex-col w-1/3">
-            {cards[counter + 1] ? cards[counter + 1] : null}
-            {cards[counter + 2] ? cards[counter + 2] : null}
-          </div>
         </div>
-        <div className="flex w-full">
-          {cards[counter + 3] ? cards[counter + 3] : null}
-          {cards[counter + 4] ? cards[counter + 4] : null}
-          {cards[counter + 5] ? cards[counter + 5] : null}
-        </div>
-      </>
+        <div>{cards[counter + 1] ? cards[counter + 1] : null}</div>
+        <div>{cards[counter + 2] ? cards[counter + 2] : null}</div>
+        <div>{cards[counter + 3] ? cards[counter + 3] : null}</div>
+        <div>{cards[counter + 4] ? cards[counter + 4] : null}</div>
+        <div>{cards[counter + 5] ? cards[counter + 5] : null}</div>
+      </div>
     )
     counter += 6
   }
@@ -88,24 +84,24 @@ const News = () => {
     <>
       <div className="w-full  relative overflow-hidden flex flex-col justify-center items-center">
         <Stripes position="absolute" color="gray-200" opacity="30" />
-        <h1 className="text-gray-500 font-extrabold p-10">NEWS</h1>
+        <h1 className="text-gray-500 font-extrabold p-10 3xl:text-6xl 3xl:p-16">
+          NEWS
+        </h1>
         <section className="w-4/5 h-full mx-36">
           {pages[page]}
 
-          <div className="mt-50em mb-30em">
+          <div className="mt-8 mb-8 flex flex-col items-center md:flex-row md:mt-20 md:mb-16 3xl:text-2xl 3xl:mb-24 3xl:mt-32">
             {page > 0 ? (
-              <>
+              <div className="px-2 py-1">
                 <Button text="Prev" action={prevPageHandler} />
-                <span className="m-5em"></span>
-              </>
+              </div>
             ) : null}
             {page === pageCount - 1 ? null : (
-              <>
+              <div className="px-2 py-1">
                 <Button text="Next" action={nextPageHandler} />
-                <span className="m-5em"></span>
-              </>
+              </div>
             )}
-            <span className="mx-10em">{`Page ${
+            <span className="mt-4 md:mt-0 md:ml-4">{`Page ${
               page + 1
             } of ${pageCount}`}</span>
           </div>
