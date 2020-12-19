@@ -27,12 +27,16 @@ const Gallery = () => {
   // build gallery index
   const galleryIndex = galleryItems.map((e, i) => {
     return (
-      <div key={i} className="mx-2">
-        <button
-          className="focus:outline-none relative w-full h-0 pb-65% overflow-hidden"
-          onClick={() => setActive(i)}
-        >
-          <img className="absolute" src={e.node.image} alt="lorem ipsum"></img>
+      <div key={i} className="relative flex m-2">
+        <button className="group w-full" onClick={() => setActive(i)}>
+          <div className="absolute top-0 left-0 z-10 bg-black w-full h-full opacity-40 group-hover:opacity-10 transition duration-500"></div>
+          <div className="focus:outline-none relative w-full h-0 pb-60% overflow-hidden">
+            <img
+              className="absolute"
+              src={e.node.image}
+              alt="lorem ipsum"
+            ></img>
+          </div>
         </button>
       </div>
     )
