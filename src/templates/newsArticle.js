@@ -37,15 +37,18 @@ const newsArticle = ({ data }) => {
   })
   // character count per column
   const charsPerColumn =
-    Math.ceil(newArray.join("").split(" ").join("").length / 2) + 40
+    Math.ceil(newArray.join("").split(" ").join("").length / 2) + 80
   // build columns
   const col1 = []
   const col2 = []
   let charCount = 0
+  let col = 1
   const columnInput = newArray.join(" ").split(" ")
   // add individual words to columns based on character count
   columnInput.forEach(e => {
-    charCount > charsPerColumn ? col2.push(e) : col1.push(e)
+    col === 2 ? col2.push(e) : col1.push(e)
+
+    if (charCount > charsPerColumn && e[e.length - 1] === ".") col = 2
     charCount += e.length
   })
 
@@ -69,7 +72,7 @@ const newsArticle = ({ data }) => {
     .map(e => {
       if (e.length > 0) {
         return (
-          <p key={Math.random() + e[0]} className="mb-4">
+          <p key={Math.random() + e[0]} className=" mb-4">
             {e}
           </p>
         )
@@ -102,32 +105,32 @@ const newsArticle = ({ data }) => {
 
   return (
     <>
-      <article className="relative overflow-hidden px-20 p-10">
+      <article className="relative overflow-hidden 2xl:px-20 2xl:p-10">
         <Stripes
           position="absolute"
           color="gray-200"
           opacity="50"
           uniform={true}
         />
-        <div className="flex justify-center pt-20 pb-16">
-          <div className="flex flex-col justify-start w-30% px-8 mb-28 mr-8">
-            <div className="flex mt-3">
-              <h3 className="bg-gray-200 text-gray-700 capitalize mb-10 py-1 px-3">
+        <div className="flex justify-center flex-col-reverse 2xl:flex-row 2xl:pt-20 2xl:pb-16 2xl:mb-4">
+          <div className="flex flex-col w-full px-2 2xl:px-8 2xl:justify-start 2xl:mr-8 2xl:w-35%">
+            <div className="flex my-2 md:ml-16 md:mt-3 md:mb-3 lg:ml-32 xl:ml-48 2xl:my-0 2xl:ml-0">
+              <h3 className="bg-gray-200 text-gray-700 capitalize text-sm py-1 px-3 md:text-base 2xl:mb-10 2xl:px-3 2xl:text-xl">
                 {articleDate.day.substring(0, 3)} {articleDate.date}{" "}
                 {articleDate.month.substring(0, 3)}
               </h3>
 
-              <h3 className="bg-blue-500 py-1 px-3 text-white mb-10">
+              <h3 className="bg-blue-500 py-1 px-3 text-white text-sm md:text-base 2xl:text-xl 2xl:mb-10">
                 {" "}
                 {articleDate.year}
               </h3>
             </div>
 
-            <h1 className="text-7xl font-bold text-gray-600">
+            <h1 className="text-3xl font-bold text-gray-600 m-auto pb-6 pt-2 px-1 sm:text-4xl sm:px-16 lg:text-5xl lg:px-32 xl:px-48 2xl:px-0 pr-10 2xl:m-0 2xl:text-7xl">
               {data.contentfulArticle.title}
             </h1>
           </div>
-          <div className="border w-50% h-0 pb-30% overflow-hidden shadow-md">
+          <div className="border w-full h-0 pb-60% overflow-hidden shadow-md 2xl:ml-4 2xl:w-50% 2xl:pb-30%">
             <img
               alt="article"
               src={
@@ -137,29 +140,28 @@ const newsArticle = ({ data }) => {
             ></img>
           </div>
         </div>
-        <div className="w-70% m-auto mb-36 text-xl flex justify-around">
-          <div className="w-45%">{col1Output}</div>
-          <div className="w-45%">{col2Output}</div>
+        <div className="w-70% m-auto mb-10 text-sm flex flex-col justify-around md:text-base xl:flex-row 2xl:mb-36 2xl:text-lg">
+          <div className="xl:px-4 2xl:w-45%">{col1Output}</div>
+          <div className="xl:px-4 2xl:w-45%">{col2Output}</div>
         </div>
-        <div className="ml-56 my-10">
+        <div className="ml-4 my-6 flex flex-col items-center md:ml-16 md:flex-row lg:ml-32 xl:ml-48 2xl:ml-56 2xl:my-10">
           {articleIndex > 0 ? (
-            <>
+            <div className="px-2 py-1">
               <Link to={`/${slugify(articles[articleIndex - 1].node.title)}/`}>
                 <Button text="Prev"></Button>
               </Link>
-              <span className="m-5em"></span>
-            </>
+            </div>
           ) : null}
           {articleIndex < articles.length - 1 ? (
-            <>
+            <div className="px-2 py-1">
               <Link to={`/${slugify(articles[articleIndex + 1].node.title)}/`}>
-                <Button text="Next" /> <span className="m-5em"></span>
+                <Button text="Next" />
               </Link>
-            </>
+            </div>
           ) : null}
-          <span className="mx-10em">{`Article ${articleIndex + 1} of ${
-            articles.length
-          }`}</span>
+          <span className="mx-10em mt-2 2xl:mt-0">{`Article ${
+            articleIndex + 1
+          } of ${articles.length}`}</span>
         </div>
       </article>
       <Footer />
