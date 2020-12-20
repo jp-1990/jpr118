@@ -46,14 +46,14 @@ const Home = () => {
       <Stripes
         position="absolute"
         opacity={windowWidth >= 1024 ? `30` : `40`}
-        color={windowWidth >= 1024 ? "blue-main" : "blue-600"}
+        color={windowWidth >= 1024 ? "blue-main" : "blue-500"}
         uniform={windowWidth >= 1024 ? false : true}
       />
       <div
-        className="absolute  top-20 bg-blue-main w-full h-44 sm:h-48 lg:h-48 lg:w-45% xl:h-56 2xl:w-40%"
+        className="absolute top-4 bg-blue-main w-full h-44 sm:top-20 sm:h-48 lg:h-48 lg:w-45% xl:h-56 2xl:w-40%"
         style={{ transform: "skew(-20deg)", right: "-5%" }}
       ></div>
-      <div className="absolute top-20 right-0 text-white w-full lg:w-auto lg:pl-20 lg:w-45% xl:right-4 2xl:right-0 2xl:pl-36 2xl:40%">
+      <div className="absolute top-4 right-0 text-white w-full sm:top-20 lg:w-auto lg:pl-20 lg:w-45% xl:right-4 2xl:right-0 2xl:pl-36 2xl:40%">
         <h1 className="text-center text-6xl font-bold pt-4 sm:text-right sm:mr-10% sm:text-7xl lg:text-7xl xl:text-8xl">
           JPR <span className="font-light">#</span>118
         </h1>
