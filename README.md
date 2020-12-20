@@ -4,7 +4,7 @@ A server-side rendered static site, linked to a Contentful CMS via GraphQL, buil
 
 ![Showcase gif](./src/images/jpr_showcase.gif)
 **Hosted on Netlify**  
-comming soon
+jpr118.netlify.app
 
 ## Summary
 
