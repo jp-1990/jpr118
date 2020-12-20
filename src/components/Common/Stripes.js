@@ -8,37 +8,36 @@ const Stripes = ({ position, color, opacity, uniform }) => {
       } -z-10`}
     >
       <div
-        className={`bg-${color} absolute opacity-${opacity}`}
+        className={`bg-${color} absolute`}
         style={{
           height: "180%",
           width: "10%",
           left: "32%",
           top: "-25%",
           transform: "rotate(20deg)",
+          opacity: `${opacity / 100}`,
         }}
       ></div>
       <div
-        className={`bg-${color} absolute opacity-${
-          uniform ? opacity : opacity * 1 + 10
-        }`}
+        className={`bg-${color} absolute`}
         style={{
           height: "180%",
           width: "6%",
           left: "45%",
           top: "-25%",
           transform: "rotate(20deg)",
+          opacity: `${uniform ? opacity / 100 : opacity / 100 + 10}`,
         }}
       ></div>
       <div
-        className={`bg-${color} absolute opacity-${
-          uniform ? opacity : opacity * 1 + 20
-        }`}
+        className={`bg-${color} absolute`}
         style={{
           height: "180%",
           width: "50%",
           left: "61%",
           top: "-25%",
           transform: "rotate(20deg)",
+          opacity: `${uniform ? opacity / 100 : opacity / 100 + 20}`,
         }}
       ></div>
     </div>
