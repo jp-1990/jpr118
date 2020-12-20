@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <div className="bg-blue-600 h-72 w-full relative">
       <div className=" h-72 z-10 relative overflow-hidden ml-30%">
-        <Stripes position="absolute" opacity="10" color="blue-500" />
+        <Stripes position="absolute" opacity="10" color="blue-300" />
       </div>
       <div className="hidden absolute top-8 right-6 text-white z-20 md:block">
         <h1 className=" text-7xl font-bold pt-4 px-20 ">
