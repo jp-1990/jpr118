@@ -3,7 +3,9 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Stripes from "../components/Common/Stripes"
 import GalleryModal from "../components/GalleryModal"
-import Footer from "../components/Footer"
+import Nav from "../components/Layout/Nav"
+import Seo from "../components/Layout/Seo"
+import Footer from "../components/Layout/Footer"
 
 const Gallery = () => {
   const [active, setActive] = useState(false)
@@ -29,7 +31,7 @@ const Gallery = () => {
     return (
       <div key={i} className="relative flex m-2">
         <button className="group w-full" onClick={() => setActive(i)}>
-          <div className="absolute top-0 left-0 z-10 bg-black w-full h-full opacity-40 group-hover:opacity-10 transition duration-500"></div>
+          <div className="absolute top-0 left-0 z-10 bg-black w-full h-full opacity-20 group-hover:opacity-0 transition duration-500"></div>
           <div className="focus:outline-none relative w-full h-0 pb-60% overflow-hidden">
             <img
               className="absolute"
@@ -46,6 +48,8 @@ const Gallery = () => {
     <>
       <div className="w-full relative overflow-hidden flex flex-col justify-center items-center">
         <Stripes position="absolute" color="gray-200" opacity="30" />
+        <Seo title="Gallery" />
+        <Nav />
         <h1 className="text-gray-500 font-extrabold p-10 3xl:text-6xl 3xl:p-16">
           Gallery
         </h1>

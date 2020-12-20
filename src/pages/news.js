@@ -4,7 +4,9 @@ import { useStaticQuery, graphql } from "gatsby"
 import Stripes from "../components/Common/Stripes"
 import NewsCard from "../components/NewsCard"
 import Button from "../components/Common/Button"
-import Footer from "../components/Footer"
+import Nav from "../components/Layout/Nav"
+import Seo from "../components/Layout/Seo"
+import Footer from "../components/Layout/Footer"
 
 import { days, months } from "../helpers/dateFunctions"
 
@@ -84,6 +86,8 @@ const News = () => {
     <>
       <div className="w-full  relative overflow-hidden flex flex-col justify-center items-center">
         <Stripes position="absolute" color="gray-200" opacity="30" />
+        <Seo title="News" />
+        <Nav />
         <h1 className="text-gray-500 font-extrabold p-10 3xl:text-6xl 3xl:p-16">
           NEWS
         </h1>

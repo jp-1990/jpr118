@@ -2,7 +2,9 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import slugify from "slugify"
 
-import Footer from "../components/Footer"
+import Seo from "../components/Layout/Seo"
+import Nav from "../components/Layout/Nav"
+import Footer from "../components/Layout/Footer"
 import Button from "../components/Common/Button"
 import Stripes from "../components/Common/Stripes"
 import { days, months } from "../helpers/dateFunctions"
@@ -112,6 +114,8 @@ const newsArticle = ({ data }) => {
           opacity="50"
           uniform={true}
         />
+        <Seo title="News" />
+        <Nav />
         <div className="flex justify-center flex-col-reverse 2xl:flex-row 2xl:pt-20 2xl:pb-16 2xl:mb-4">
           <div className="flex flex-col w-full px-2 2xl:px-8 2xl:justify-start 2xl:mr-8 2xl:w-35% 2xl:mt-12">
             <div className="flex my-2 md:ml-16 md:mt-3 md:mb-3 lg:ml-32 xl:ml-48 2xl:my-0 2xl:ml-0">

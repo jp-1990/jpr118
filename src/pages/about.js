@@ -2,9 +2,10 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { IoMdTrophy } from "react-icons/io"
 
-import Seo from "../components/Seo"
+import Seo from "../components/Layout/Seo"
+import Nav from "../components/Layout/Nav"
 import AboutCard from "../components/AboutCard"
-import Footer from "../components/Footer"
+import Footer from "../components/Layout/Footer"
 import Stripes from "../components/Common/Stripes"
 
 const About = () => {
@@ -42,6 +43,7 @@ const About = () => {
     <>
       <Seo title="About" />
       <div className="w-full relative overflow-hidden flex flex-col justify-center items-center">
+        <Nav />
         <Stripes position="absolute" color="gray-200" opacity="30" />
         <div className="flex flex-col-reverse justify-center xl:py-20 xl:flex-row">
           <div className="flex flex-col justify-center items-center mt-16">
@@ -71,6 +73,7 @@ const About = () => {
             <img
               className="w-72 h-auto mt-10 mb-10"
               src={about.image.fluid.src}
+              alt="Yamaha R6"
             ></img>
           </div>
           <article className="w-full px-32 mt-5 xl:w-45%">
