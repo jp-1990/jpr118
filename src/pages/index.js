@@ -45,7 +45,7 @@ const Home = () => {
       <div className="h-full w-full absolute bg-blue-main -z-10 lg:opacity-40"></div>
       <Stripes
         position="absolute"
-        opacity={windowWidth >= 1024 ? "30" : "40"}
+        opacity={windowWidth >= 1024 ? `${30}` : `${40}`}
         color={windowWidth >= 1024 ? "blue-main" : "blue-600"}
         uniform={windowWidth >= 1024 ? false : true}
       />
