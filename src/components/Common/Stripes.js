@@ -26,7 +26,7 @@ const Stripes = ({ position, color, opacity, uniform }) => {
           left: "45%",
           top: "-25%",
           transform: "rotate(20deg)",
-          opacity: `${uniform ? opacity / 100 : opacity / 100 + 10}`,
+          opacity: `${uniform ? opacity / 100 : opacity / 100 + 10 / 100}`,
         }}
       ></div>
       <div
@@ -37,7 +37,7 @@ const Stripes = ({ position, color, opacity, uniform }) => {
           left: "61%",
           top: "-25%",
           transform: "rotate(20deg)",
-          opacity: `${uniform ? opacity / 100 : opacity / 100 + 20}`,
+          opacity: `${uniform ? opacity / 100 : opacity / 100 + 20 / 100}`,
         }}
       ></div>
     </div>
