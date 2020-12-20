@@ -34,6 +34,7 @@ const AboutCard = () => {
         <img
           className="absolute rounded-full ml-10% top-0 p-6 border border-blue-800 bg-blue-600 w-65% max-w-290 xl:max-w-none xl:w-90%"
           src={about.image.fluid.src}
+          alt="Lorum ipsum"
         ></img>
       </div>
       <div className="relative -z-10 bg-blue-800 rounded-2xl overflow-hidden">

@@ -34,7 +34,11 @@ const GalleryModal = ({ data, active, setActive }) => {
             </div>
           </div>
           <div className="w-full relative h-0 pb-65% overflow-hidden lg:w-3/4 lg:pb-50%">
-            <img className="absolute" src={data[active].node.image}></img>
+            <img
+              className="absolute"
+              src={data[active].node.image}
+              alt="Lorum ipsum"
+            ></img>
           </div>
         </div>
         <div className="w-full px-10% py-4 my-4 text-sm bg-gray-100 md:text-base lg:w-90% lg:text-xl 3xl:text-3xl">
