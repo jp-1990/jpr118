@@ -1,3 +1,8 @@
+const dotenv = require("dotenv")
+if (process.env.NODE_ENV !== "production") {
+  dotenv.config()
+}
+
 module.exports = {
   siteMetadata: {
     title: `JPR#118`,
@@ -16,6 +21,13 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-postcss`,
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `mdgplbk6ms0c`,
+        accessToken: process.env.CONTENTFUL_API_KEY,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
