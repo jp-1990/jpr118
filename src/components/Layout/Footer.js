@@ -10,7 +10,7 @@ const Footer = () => {
       <div className=" h-72 z-10 relative overflow-hidden ml-30%">
         <Stripes
           position="absolute"
-          opacity="10"
+          opacity="30"
           color="blue-500"
           uniform={true}
         />
