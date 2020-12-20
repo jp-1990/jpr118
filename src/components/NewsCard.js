@@ -3,22 +3,12 @@ import { Link } from "gatsby"
 import slugify from "slugify"
 
 const NewsCard = ({ day, date, month, year, title, image, index }) => {
-  let width
-  if (index === 0 || index % 6 === 0) {
-    width = "w-2/3 mr-4 mb-8"
-  } else if ((index + 5) % 6 === 0 || (index + 4) % 6 === 0) {
-    width = "w-auto ml-4 mb-8"
-  } else {
-    width = "w-1/3 mr-8 "
-  }
-  const fontSize = index % 6 === 0 ? "base" : "1/2"
-
   return (
     <article
       className={`group transform relative w-full overflow-hidden focus:outline-none`}
     >
       <Link to={`/${slugify(title)}/`}>
-        <div className="absolute top-0 left-0 z-10 w-full h-full bg-black opacity-30 group-hover:opacity-0 transition-all duration-500"></div>
+        <div className="absolute top-0 left-0 z-10 w-full h-full bg-black opacity-20 group-hover:opacity-0 transition-all duration-500"></div>
         <div
           className={`relative w-full pb-50% ${
             index % 6 === 0 ? "md:pb-51% xl:pb-50.5%" : "md:pb-50%"
