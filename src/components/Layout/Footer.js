@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { SiFacebook, SiInstagram, SiYoutube } from "react-icons/si"
 
-import Stripes from "../components/Common/Stripes"
+import Stripes from "../Common/Stripes"
 
 const Footer = () => {
   return (
