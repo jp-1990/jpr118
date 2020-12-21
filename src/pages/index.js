@@ -49,67 +49,84 @@ const Home = () => {
         color={windowWidth >= 1024 ? "blue-main" : "blue-500"}
         uniform={windowWidth >= 1024 ? false : true}
       />
-      <div
-        className="absolute top-4 bg-blue-main w-full h-44 sm:top-20 sm:h-48 lg:h-48 lg:w-45% xl:h-56 2xl:w-40%"
-        style={{ transform: "skew(-20deg)", right: "-5%" }}
-      ></div>
-      <div className="absolute top-4 right-0 text-white w-full sm:top-20 lg:w-auto lg:pl-20 lg:w-45% xl:right-4 2xl:right-0 2xl:pl-36 2xl:40%">
-        <h1 className="text-center text-6xl font-bold pt-4 sm:text-right sm:mr-10% sm:text-7xl lg:text-7xl xl:text-8xl">
-          JPR <span className="font-light">#</span>118
-        </h1>
-        <div className="flex justify-center items-center pt-4 text-5xl sm:justify-between sm:pr-10% sm:w-auto sm:pl-60% lg:pr-0 lg:pl-0 lg:pt-2 lg:w-auto lg:ml-30% lg:mr-10% xl:mr-10% xl:pt-0 xl:text-7xl 2xl:pr-6 2xl:pl-2">
-          <a
-            className="px-2 sm:p-0"
-            href="https://www.facebook.com/JPR118"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <SiFacebook />
-          </a>
-          <a
-            className="px-2 sm:p-0"
-            href="https://www.instagram.com/jp.118/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <SiInstagram />
-          </a>
-          <a
-            className="text-6xl px-2 sm:px-0 lg:text-7xl xl:text-8xl"
-            href="https://www.youtube.com/channel/UCMJCzcXV4yvFeRZ4E6P25HQ"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <SiYoutube />
-          </a>
+      {/* Main content box */}
+      <div className="h-full relative">
+        {/* Title box */}
+        <div className="w-full flex justify-end">
+          <div className="w-80 lg:w-96 xl:w-max">
+            <div
+              className="bg-blue-main w-full p-2 my-4 ml-10 opacity-70"
+              style={{ transform: "skew(-20deg)" }}
+            >
+              <div
+                className="flex flex-col items-end text-white ml-5 mr-10 pr-2 pb-2 2xl:pr-10"
+                style={{ transform: "skew(20deg)" }}
+              >
+                <h1 className="font-extrabold lg:text-6xl lg:py-2 2xl:text-8xl">
+                  JPR <span className="font-light">#</span>118
+                </h1>
+                <div className="flex items-center text-5xl 2xl:text-7xl">
+                  <a
+                    className=""
+                    href="https://www.facebook.com/JPR118"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <SiFacebook />
+                  </a>
+                  <a
+                    className="px-3"
+                    href="https://www.instagram.com/jp.118/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <SiInstagram />
+                  </a>
+                  <a
+                    className="text-5xl lg:text-6xl 2xl:text-8xl"
+                    href="https://www.youtube.com/channel/UCMJCzcXV4yvFeRZ4E6P25HQ"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <SiYoutube />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="absolute bottom-1/3 right-10% p-4 flex flex-row  md:right-5% lg:right-10%">
-        <div className="h-46 w-3 mx-8 bg-white transform skew-y-25"></div>
-        <ul className="text-2xl font-light text-white xl:text-3xl">
-          <li className="p-3">
-            <Link to="/about/">ABOUT</Link>
-          </li>
-          <li className="p-3">
-            <Link to="/news/">NEWS</Link>
-          </li>
-          <li className="p-3">
-            <Link to="/gallery/">GALLERY</Link>
-          </li>
-        </ul>
-      </div>
-      <div className="absolute flex flex-col bottom-14 w-full items-center right-0 text-white sm:items-start sm:w-auto sm:right-5%">
-        <h2 className="py-1 text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
-          James Plummer
-        </h2>
-        <h2 className="py-1 text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
-          MRO600 // BEMSEE
-        </h2>
-        {windowWidth >= 1024 ? (
-          <h4 className="py-1 lg:text-xl xl:text-2xl">
-            Onboard Brands Hatch - Indy Circuit{" "}
-          </h4>
-        ) : null}
+        {/* Nav box */}
+        <div className="flex justify-end items-center mr-10 lg:absolute lg:top-50% lg:right-0 lg:transform lg:-translate-y-50% 2xl:mr-20">
+          <div className="h-32 w-3 mx-8 bg-white transform skew-y-25 2xl:h-44"></div>
+          <ul className="text-xl font-light text-white xl:text-3xl">
+            <li className="p-2 2xl:p-3">
+              <Link to="/about/">ABOUT</Link>
+            </li>
+            <li className="p-2 2xl:p-3">
+              <Link to="/news/">NEWS</Link>
+            </li>
+            <li className="p-2 2xl:p-3">
+              <Link to="/gallery/">GALLERY</Link>
+            </li>
+          </ul>
+        </div>
+        {/* Info box */}
+        <div className="w-full flex justify-end md:absolute md:bottom-10% lg:right-5%">
+          <div className="flex flex-col w-64 mt-40% text-white items-start lg:w-auto">
+            <h2 className="py-1 text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
+              James Plummer
+            </h2>
+            <h2 className="py-1 text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
+              MRO600 // BEMSEE
+            </h2>
+
+            {windowWidth >= 1024 ? (
+              <h4 className="py-1 lg:text-lg xl:text-xl">
+                Onboard Brands Hatch - Indy Circuit{" "}
+              </h4>
+            ) : null}
+          </div>
+        </div>
       </div>
     </div>
   )
