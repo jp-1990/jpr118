@@ -52,10 +52,10 @@ const Home = () => {
       {/* Main content box */}
       <div className="h-full relative">
         {/* Title box */}
-        <div className="w-full flex justify-end">
+        <div className="relative z-10 w-full flex justify-end">
           <div className="w-80 lg:w-96 xl:w-max">
             <div
-              className="bg-blue-main w-full p-2 my-4 ml-10 opacity-70"
+              className="bg-blue-main w-full p-2 my-4 ml-10 opacity-90"
               style={{ transform: "skew(-20deg)" }}
             >
               <div
@@ -96,7 +96,7 @@ const Home = () => {
           </div>
         </div>
         {/* Nav box */}
-        <div className="flex justify-end items-center mr-10 lg:absolute lg:top-50% lg:right-0 lg:transform lg:-translate-y-50% 2xl:mr-20">
+        <div className="relative z-10 flex justify-end items-center mr-10 lg:absolute lg:top-50% lg:right-0 lg:transform lg:-translate-y-50% 2xl:mr-20">
           <div className="h-32 w-3 mx-8 bg-white transform skew-y-25 2xl:h-44"></div>
           <ul className="text-xl font-light text-white xl:text-3xl">
             <li className="p-2 2xl:p-3">
