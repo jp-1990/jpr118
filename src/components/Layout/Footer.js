@@ -46,7 +46,7 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      <div className="absolute top-10% left-15% p-4 flex flex-row">
+      <div className="absolute z-20 top-10% left-15% p-4 flex flex-row">
         <ul className="text-2xl font-light text-white 3xl:text-3xl">
           <li className="p-2">
             <Link to="/about/">ABOUT</Link>
