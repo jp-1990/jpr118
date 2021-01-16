@@ -35,8 +35,8 @@ const GalleryModal = ({ data, active, setActive }) => {
           </div>
           <div className="w-full relative h-0 pb-65% overflow-hidden lg:w-3/4 lg:pb-50%">
             <img
-              className="absolute"
-              src={data[active].node.image}
+              className="absolute w-full h-auto"
+              src={data[active].node.image.fluid.src}
               alt="Lorum ipsum"
             ></img>
           </div>

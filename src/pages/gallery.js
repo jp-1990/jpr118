@@ -15,7 +15,11 @@ const Gallery = () => {
         edges {
           node {
             date
-            image
+            image {
+              fluid {
+                src
+              }
+            }
             imageDescription {
               imageDescription
             }
@@ -35,7 +39,7 @@ const Gallery = () => {
           <div className="focus:outline-none relative w-full h-0 pb-60% overflow-hidden">
             <img
               className="absolute"
-              src={e.node.image}
+              src={e.node.image.fluid.src}
               alt="lorem ipsum"
             ></img>
           </div>

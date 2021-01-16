@@ -137,10 +137,8 @@ const newsArticle = ({ data }) => {
           <div className="border w-full h-0 pb-60% overflow-hidden shadow-md 2xl:ml-4 2xl:w-50% 2xl:pb-30%">
             <img
               alt="article"
-              src={
-                data.contentfulArticle.image ||
-                "https://scontent-lhr8-1.xx.fbcdn.net/v/t31.0-8/19787292_10155473581056563_9209247377612002874_o.jpg?_nc_cat=101&ccb=2&_nc_sid=a9b1d2&_nc_ohc=2n5PWsNzLHQAX9JqIeW&_nc_ht=scontent-lhr8-1.xx&oh=16423e300aa4e849bbfbdeda841b516c&oe=600197EA"
-              }
+              src={data.contentfulArticle.image.fluid.src}
+              className="w-full h-auto"
             ></img>
           </div>
         </div>
@@ -183,7 +181,11 @@ export const query = graphql`
       }
       date
       title
-      image
+      image {
+        fluid {
+          src
+        }
+      }
     }
     allContentfulArticle {
       edges {

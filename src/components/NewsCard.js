@@ -14,7 +14,7 @@ const NewsCard = ({ day, date, month, year, title, image, index }) => {
             index % 6 === 0 ? "md:pb-51% xl:pb-50.5%" : "md:pb-50%"
           } h-0 `}
         >
-          <img src={image} alt="test"></img>
+          <img src={image} alt="test" className="w-full h-auto"></img>
         </div>
         <div className="w-full text-xs xl:text-base">
           <div

@@ -20,7 +20,11 @@ const News = () => {
           node {
             date
             title
-            image
+            image {
+              fluid {
+                src
+              }
+            }
           }
         }
       }
@@ -46,7 +50,7 @@ const News = () => {
         month={months[date.getMonth()].substring(0, 3)}
         year={date.getFullYear()}
         title={e.node.title}
-        image={e.node.image}
+        image={e.node.image.fluid.src}
         index={i}
       />
     )
